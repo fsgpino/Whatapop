@@ -1,0 +1,40 @@
+{
+  "name": "whatapop",
+  "version": "0.0.1",
+  "description": "Application for purchase and sale in AngularJS.",
+  "scripts": {
+    "sparrest": "node node_modules/node-sparrest/node-sparrest.js",
+    "lite": "lite-server",
+    "start": "concurrently 'npm run sparrest' 'npm run lite'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fsgpino/Whatapop.git"
+  },
+  "keywords": [
+    "buy",
+    "sell",
+    "items",
+    "item",
+    "angularjs",
+    "angular",
+    "javascript"
+  ],
+  "author": "Francisco Gómez Pino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fsgpino/Whatapop/issues"
+  },
+  "homepage": "https://github.com/fsgpino/Whatapop#readme",
+  "dependencies": {
+    "@angular/router": "^0.2.0",
+    "angular": "^1.5.6",
+    "bootstrap": "^3.3.6",
+    "jquery": "^1.12.4",
+    "lite-server": "^2.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^2.1.0",
+    "node-sparrest": "0.0.10"
+  }
+}

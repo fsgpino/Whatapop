@@ -1,0 +1,20 @@
+
+html,
+body {
+    height: 100%;
+    background-color: #edece9;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    overflow: hidden;
+}
+
+body {
+    padding-top: 70px;
+    text-align: center;
+    overflow: auto;
+}
+
+form {
+    position: relative;
+    z-index: 0;
+}
