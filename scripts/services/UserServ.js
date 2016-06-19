@@ -40,16 +40,16 @@ angular
         }
 
         // Guardar un usuario en el servidor
-        this.saveUser = function (user, image) {
+        this.saveUser = function (user) {
 
             var promise;
 
-            if (image) {
+            if (user.avatar) {
                 // Si la imagen viene dada.
 
                 // Montamos un 'FormData' con la imagen.
                 var data = new FormData();
-                data.append("img", image);
+                data.append("img", user.avatar);
 
                 // Configuramos el 'Content-Type' de la petición.
                 // Tenemos que indicarlo como 'undefined' para que

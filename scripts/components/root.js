@@ -11,6 +11,10 @@ angular
             name: "ProductDetail",
             path: "/products/:id",
             component: "productDetail"
+        },{
+            name: "UserSignup",
+            path: "/users/signup",
+            component: "userSignup"
         }],
         templateUrl: "views/root.html"
     });
