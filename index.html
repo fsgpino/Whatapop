@@ -1,35 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <!-- Con 'base' indicamos la ruta base a partir de la cual se contruye el Single Page Application -->
-    <base href="/">
-    <meta charset="UTF-8">
-    <title>Whatapop - Revolucionando la compra y venta online</title>
-    <!-- Estilos -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="styles/whatapop.css">
-    <!-- jQuery -->
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <!-- AngularJS -->
-    <script src="node_modules/angular/angular.js"></script>
-    <script src="node_modules/@angular/router/angular1/angular_1_router.js"></script>
-    <!-- Documento de configuración del módulo -->
-    <script src="scripts/app.js"></script>
-    <!-- Componentes -->
-    <script src="scripts/components/root.js"></script>
-    <!-- Filtros -->
-    <!-- Servicios -->
-    <!-- Directivas -->
-    <!-- Values -->
-    <script src="scripts/values/settings.js"></script>
 
-</head>
-<!-- Hacemos el bootstrapping del módulo -->
-<body ng-app="whatapop">
-    <!-- Componente raíz -->
-    <root></root>
-</body>
+    <head>
+
+        <!-- Con 'base' indicamos la ruta base a partir de la cual se contruye el Single Page Application -->
+        <base href="/">
+        <meta charset="UTF-8">
+        <title>Whatapop - Revolucionando la compra y venta online</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+
+        <!-- CSS Personalizado -->
+        <link rel="stylesheet" href="styles/whatapop.css">
+
+        <!-- jQuery -->
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+        <!-- Bootstrap JS -->
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!-- AngularJS -->
+        <script src="node_modules/angular/angular.min.js"></script>
+
+        <!-- AngularJS Plugins -->
+        <script src="node_modules/@angular/router/angular1/angular_1_router.js"></script>
+        <script src="node_modules/ng-image-picker/ng-image-picker.min.js"></script>
+        <script src="node_modules/angular-google-maps-native/dist/angular-google-maps-native.min.js"></script>
+        <script src="node_modules/ng-haversine/ng-haversine.min.js"></script>
+
+        <!-- Documento de configuración del módulo -->
+        <script src="scripts/app.js"></script>
+
+        <!-- Componentes -->
+        <script src="scripts/components/navbar.js"></script>
+        <script src="scripts/components/products.js"></script>
+        <script src="scripts/components/product-detail.js"></script>
+        <script src="scripts/components/root.js"></script>
+
+        <!-- Directivas -->
+        <script src="scripts/directives/product-item.js"></script>
+
+        <!-- Filtros -->
+        <script src="scripts/filters/string-limiter.js"></script>
+
+        <!-- Servicios -->
+        <script src="scripts/services/CategoryServ.js"></script>
+        <script src="scripts/services/LocationServ.js"></script>
+        <script src="scripts/services/ProductServ.js"></script>
+        <script src="scripts/services/UserServ.js"></script>
+
+        <!-- Values -->
+        <script src="scripts/values/settings.js"></script>
+
+    </head>
+
+    <!-- Hacemos el bootstrapping del módulo -->
+    <body ng-app="whatapop">
+
+        <!-- Componente raíz -->
+        <root></root>
+
+    </body>
+
 </html>

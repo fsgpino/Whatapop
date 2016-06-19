@@ -1,0 +1,31 @@
+ <table style="margin: auto;border: 0px;padding: 0px;">
+    <tr>
+        <td style="padding-right: 5px;">
+            <div class="btn-group" role="group">
+                <button type="button" ng-click="$ctrl.categorySelected = ''" ng-class="{active: $ctrl.categorySelected == ''}" class="btn btn-default">Todos los productos</button>
+                <button type="button" ng-repeat="category in $ctrl.categories | orderBy: 'name'" ng-click="$ctrl.categorySelected = category.name" ng-class="{active: $ctrl.categorySelected == category.name}"  class="btn btn-default">{{ ::category.name}}</button>
+            </div>
+        </td>
+        <td style="padding-left: 5px;">
+            <div class="dropdown">
+                <button class="btn btn-info dropdown-toggle" ng-class="{active: $ctrl.locationMeters > 0}" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Buscar productos cerca <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuNearLocation">
+                    <li ng-class="{active: $ctrl.locationMeters == 1000}"><a ng-click="$ctrl.locationMeters = 1000;$ctrl.getProducts()" style="cursor: pointer;">&lt; 1 km</a></li>
+                    <li ng-class="{active: $ctrl.locationMeters == 5000}"><a ng-click="$ctrl.locationMeters = 5000;$ctrl.getProducts()" style="cursor: pointer;">&lt; 5 km</a></li>
+                    <li ng-class="{active: $ctrl.locationMeters == 25000}"><a ng-click="$ctrl.locationMeters = 25000;$ctrl.getProducts()" style="cursor: pointer;">&lt; 25 km</a></li>
+                    <li ng-class="{active: $ctrl.locationMeters == 50000}"><a ng-click="$ctrl.locationMeters = 50000;$ctrl.getProducts()" style="cursor: pointer;">&lt; 50 km</a></li>
+                    <li ng-class="{active: $ctrl.locationMeters == 100000}"><a ng-click="$ctrl.locationMeters = 100000;$ctrl.getProducts()" style="cursor: pointer;">&lt; 100 km</a></li>
+                    <li ng-if="$ctrl.locationMeters > 0" role="separator" class="divider"></li>
+                    <li ng-if="$ctrl.locationMeters > 0"><a ng-click="$ctrl.locationMeters = 0;$ctrl.getProducts()" style="cursor: pointer;">No buscar por localización</a></li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+<div class="container" style="text-align: center;">
+    <product-item ng-repeat="product in $ctrl.products | filter:$ctrl.categorySelected | orderBy:'name'" product="product" ng-link="['ProductDetail',{id: product.id}]" style="float:left;" />
+</div>

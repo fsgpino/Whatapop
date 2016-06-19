@@ -1,12 +1,22 @@
+
+<!-- Barra de navegación superior -->
+<navbar></navbar>
+
+<!-- Contenedor principal de la aplicación - Bootstrap -->
 <div class="container">
 
-    <!-- Cabecera de la aplicación -->
-    <div class="row">
-        <div>
-            <header>
-                <h1>Whatapop</h1>
-            </header>
-        </div>
+    <!-- Vista principal  -->
+    <ng-outlet class="hidden-xs"></ng-outlet>
+
+    <!-- Vista a mostrar en caso de ventana demasiado pequeña  -->
+    <div class="hidden-sm hidden-md hidden-lg" style="padding-top: 20px;">
+        <p align="center" class="text-danger" style="font-size: 24px;"> <span class="glyphicon glyphicon-resize-horizontal" style="font-size: 120px;" aria-hidden="true"></span><br/> No hay espacio ¡Que agobio!
+            <br/><span class="text-warning" style="font-size: 12px;">Agranda la ventana del navegador para poder visualizar el contenido</span></p>
     </div>
+
+    <!-- Copyright  -->
+    <footer class="footer">
+        <p>© Copyright 2016 por <a href="http://www.fsgpino.es/" target="blank"> Francisco Gómez Pino</a>.</p>
+    </footer>
 
 </div>

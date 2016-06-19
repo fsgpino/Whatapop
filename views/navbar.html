@@ -1,0 +1,38 @@
+<div class="navbar navbar-whatapop navbar-fixed-top" role="navigation">
+
+    <div class="container">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" ng-link="['Products']" style="color:#FFFFFF;cursor: pointer;">Whata<span style="color:#ABABAB;">pop</span></a>
+        </div>
+
+        <div class="hidden-xs">
+
+            <form class="navbar-form navbar-left" role="search" name="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Busca productos" ng-model="$ctrl.search" required autocomplete="off">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit" ng-link="['Products',{search: $ctrl.search}]" ng-disabled="search.$invalid"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </span>
+                </div>
+            </form>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" /> Menú <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">Productos</li>
+                        <li><a ng-link="['Products']" style="cursor: pointer;"><span class="glyphicon glyphicon-th" aria-hidden="true" /> Ver productos</a></li>
+                        <li><a style="cursor: pointer;"><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true" /> Subir producto</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Usuario</li>
+                        <li><a style="cursor: pointer;"><span class="glyphicon glyphicon-user" aria-hidden="true" /> Registrarse</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>

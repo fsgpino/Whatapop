@@ -10,4 +10,4 @@ Application for purchase and sale in AngularJS. This is a practice of AngularJS 
 
 * Clone this repo and open a terminal inside root directory from this repo.
 * Execute `npm install`.
-* Execute `npm start`. Your browser should open showing the Whatapop's web.
+* Execute `npm run dev`. Your browser should open showing the Whatapop's web.

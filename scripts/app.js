@@ -2,7 +2,10 @@
 // Setter de los modulos.
 angular
     .module("whatapop", [
-        "ngComponentRouter"
+        "ngComponentRouter",
+        "dahr.ng-image-picker",
+        "dahr.ng-haversine",
+        "GoogleMapsNative"
     ]);
 
 // Configuramos el proveedor '$locationProvider'. Establecemos el
@@ -16,4 +19,4 @@ angular
 // En el value '$routerRootComponent' indicamos el componente raíz.
 angular
     .module("whatapop")
-    .value("$routerRootComponent", "raiz");
+    .value("$routerRootComponent", "root");

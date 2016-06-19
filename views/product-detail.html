@@ -1,0 +1,107 @@
+
+<div class="row">
+
+    <div class="col-sm-5 col-md-4">
+
+        <div class="panel panel-default" style="cursor: default;margin: 15px;">
+
+            <div class="panel-body" style="padding: 0px;margin:0px;">
+                <img ng-src="{{::$ctrl.getImageAbsolutePath($ctrl.product.photos[0])}}" class="img-responsive" style="width: 100%;">
+            </div>
+
+            <div class="panel-footer" style="text-align: left;">
+                <span class="label label-default" style="font-size: 15px;float: right;">{{ ::$ctrl.product.price | currency: "€" }}</span>
+                Precio de venta
+            </div>
+
+            <div class="panel-footer" style="text-align: left;">
+                <span class="label label-info" style="font-size: 13px;float: right;">{{ ::$ctrl.product.state }}</span>
+                Estado
+            </div>
+
+            <div class="panel-footer" style="text-align: left;">
+                <span class="label label-primary" style="font-size: 13px;float: right;">{{ ::$ctrl.product.category.name }}</span>
+                Categoría
+            </div>
+
+            <div class="panel-footer" style="text-align: left;">
+                <span class="label label-warning" style="font-size: 13px;float: right;">{{ ::$ctrl.product.published_date | date: 'dd/MM/yyyy hh:mm' }}</span>
+                Publicado el
+            </div>
+
+
+        </div>
+
+        <button ng-hide="$ctrl.interests.includes($ctrl.product.id)" class="btn btn-success" ng-click="$ctrl.interesting($ctrl.product.id)">
+            <span class="glyphicon glyphicon glyphicon-star" aria-hidden="true"></span> Me interesa
+        </button>
+
+        <button ng-show="$ctrl.interests.includes($ctrl.product.id)" class="btn btn-danger" ng-click="$ctrl.notInteresting($ctrl.product.id)">
+            <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> Ya no me interesa
+        </button>
+
+    </div>
+
+    <div class="col-sm-7 col-md-8">
+
+        <h4 style="cursor: default">{{ ::$ctrl.product.name }}</h4>
+
+        <div class="well well-sm text-justify paragraph" style="cursor: default;margin: 5px;" ng-bind-html="::$ctrl.description"></div>
+
+        <div class="row">
+
+            <div class="col-sm-6">
+
+                <div class="panel panel-default" style="margin-right:5px;margin-left: 5px;margin-top: 15px;">
+
+                    <div class="panel-heading" style="width: 100%;vertical-align: middle;">
+                        <h3 class="panel-title" style="vertical-align: middle;height: 100%;"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Vendedor</h3>
+                    </div>
+
+                    <div class="panel-body" style="padding: 0px;margin:0px;cursor: pointer; height: 100px; text-align: center;">
+                        <table style="padding: 0px; height: 100%; border-spacing: 0px;margin: auto;vertical-align: middle;">
+                            <tbody>
+                                <tr>
+                                    <td align="center" rowspan="2" style="width: 80px;height: 100%;vertical-align: middle;">
+                                        <img class="img-circle" ng-src="{{::$ctrl.getImageAbsolutePath($ctrl.user.avatar)}}" style="border: 1px solid #AEAEAE;width:80px;height:80px;object-fit: cover;">
+                                    </td>
+                                    <td align="left" style="line-height: 1.1em;"> &nbsp; <span style="font-size: 18px;"><b>{{::$ctrl.user.name}}</b></span><br> &nbsp; <span class="text-muted" style="font-size: 14px;">{{::$ctrl.user.nick}}</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+
+                <div class="panel panel-info" style="margin-right:5px;margin-left: 5px;margin-top: 15px;">
+
+                    <div class="panel-heading" style="width: 100%;vertical-align: middle;">
+                        <h3 class="panel-title" style="vertical-align: middle;height: 100%;"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Localización</h3>
+                    </div>
+
+                    <div class="panel-body" style="padding: 0px;margin:0px;">
+
+                        <div class="col-sm-12">
+
+                            <gm-map center="$ctrl.location" zoom="16">
+                                <gm-marker position="$ctrl.location"></gm-marker>
+                            </gm-map>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
